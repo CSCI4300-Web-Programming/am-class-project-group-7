@@ -1,20 +1,20 @@
-# Project_Name_Here
+# Class Forum
 
 ## Our Group
-- 
-- 
-- 
+- Aden Rubenstein (amr00658)
+- Noah Horne (nmh53102)
+- Jake Flanagan (jrf67609)
 -
 
-- class section ( AM or PM )
-- group name 
+- Class Section: ( AM )
+- Group 7
 
 ---
 ## Splash page
 
 Upload image to `/images/` and link it below:
 
-`![Group Photo](../images/splash-mockup.jpg)`
+![Splash Page](../images/homePageMockup.png)
 
 
 ---
@@ -23,7 +23,7 @@ Upload image to `/images/` and link it below:
 
 Upload image to `/images/` and link it below:
 
-`![Unauthenticated View](../images/non-authenticated.jpg)`
+![Unathenticated](../images/notLoggedInPageMockup.png)
 
 ---
 
@@ -31,7 +31,7 @@ Upload image to `/images/` and link it below:
 
 Upload image to `/images/` and link it below:
 
-`![Authenticated View](../images/authenticated.jpg)`
+![Authenticated](../images/addPageMockup.png)
 
 
 ---
@@ -40,6 +40,6 @@ Upload image to `/images/` and link it below:
 
 Upload image to `/images/` and link it below:
 
-`![Form View](../images/form-view.jpg)`
+![Form View](../images/Form submission mockup.png)
 
 ---
