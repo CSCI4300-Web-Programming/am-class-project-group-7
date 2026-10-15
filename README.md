@@ -11,10 +11,10 @@ Our team collaboratively designed, developed, and deployed this full-stack web a
 
 | Member Name      | GitHub Username      | Role          |
 |------------------|----------------------|---------------|
-|                  |                      | Project Leader  |
-|                  |                      | Project Manager   |
-|                  |                      | GitHub Captain |
-|                  |                      |(Communication Leader - opt.)   |
+| Aden Rubenstein  |  adenrubenstein      | Project Leader  |
+| Noah Horne       |  noahhorne674        | Project Manager   |
+| Jake Flanagan    |  jake112000          | GitHub Captain |
+|       N/A        |                      |(Communication Leader - opt.)   |
 
 ---
 
