@@ -14,7 +14,7 @@
 
 Upload image to `/images/` and link it below:
 
-![Splash Page](../images/homePageMockup.png)
+![Splash Page](../images/homePageMockup.jpg)
 
 
 ---
