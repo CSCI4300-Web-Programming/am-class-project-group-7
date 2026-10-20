@@ -7,7 +7,7 @@ Our team collaboratively designed, developed, and deployed this full-stack web a
 
 ---
 
-## Our Team - Group_Name_Here 
+## Our Team - Group 7
 
 | Member Name      | GitHub Username      | Role          |
 |------------------|----------------------|---------------|
