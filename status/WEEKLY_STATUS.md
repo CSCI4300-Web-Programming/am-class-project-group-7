@@ -16,15 +16,15 @@ Upload image to `/images/` and link it below:
 ## Progress Summary - **Week #1:**  Monday, October 12th -  Sunday, October 18th
 
 ** What we completed this week:**  
-- 
+- This week we created the initial mockups for how we would like our project to look
 -  
 
 ** Issues / blockers encountered:**  
--  
+-  Few issues were encountered this week
 -  
 
 ** Goals for next week:**  
--  
+-  For next week we would like to complete the functional version of the UI
 -  
 
 ---
