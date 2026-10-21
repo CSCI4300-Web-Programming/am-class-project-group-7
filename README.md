@@ -1,4 +1,4 @@
-# Project_Name_Here
+# UGA Computer Science Forum
 
 ##  Overview
 
