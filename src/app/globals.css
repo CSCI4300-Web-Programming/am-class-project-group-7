@@ -45,6 +45,39 @@ body {
   outline-offset: 3px;
 }
 
+.forum-post {
+  width: min(100% - 2rem, 20rem);
+  margin: 1.5rem auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(23, 23, 23, 0.12);
+}
+
+.forum-post-image {
+  display: block;
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.forum-post-content {
+  padding: 1rem;
+}
+
+.forum-post-title {
+  margin: 0 0 0.5rem;
+  color: #171717;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.forum-post-description {
+  margin: 0;
+  color: #404040;
+  line-height: 1.5;
+}
+
 .site-navbar {
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
 }
