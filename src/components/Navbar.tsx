@@ -7,6 +7,7 @@ type NavbarProps = {
 export default function Navbar({ loggedIn = false }: NavbarProps) {
   return (
     <nav
+      className="site-navbar"
       style={{
         display: "flex",
         alignItems: "center",
@@ -19,26 +20,28 @@ export default function Navbar({ loggedIn = false }: NavbarProps) {
         borderRadius: "0 0 18px 18px",
       }}
     >
-      <Link
-        href="/"
+      <span
+        className="site-navbar-title"
         style={{
-          color: "#ffffff",
-          textDecoration: "none",
           fontWeight: 700,
           letterSpacing: "0.05em",
         }}
       >
         CSCI Student Forum
-      </Link>
+      </span>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-        <Link href="/" style={{ color: "#ffffff", textDecoration: "none" }}>
+      <div className="site-navbar-links" style={{ display: "flex", alignItems: "center" }}>
+        <Link href="/" className="site-navbar-link" style={{ color: "#ffffff", textDecoration: "none" }}>
           Home
         </Link>
-        <Link href="/mainscreen" style={{ color: "#ffffff", textDecoration: "none" }}>
+        <Link href="/mainscreen" className="site-navbar-link" style={{ color: "#ffffff", textDecoration: "none" }}>
           Main Screen
         </Link>
-        <Link href="/login" style={{ color: "#ffffff", textDecoration: "none" }}>
+        <Link
+          href={loggedIn ? "/mainscreen" : "/login"}
+          className="site-navbar-link"
+          style={{ color: "#ffffff", textDecoration: "none" }}
+        >
           {loggedIn ? "Logout" : "Login"}
         </Link>
       </div>

@@ -25,8 +25,28 @@ body {
   font-family: "Host Grotesk", times, sans-serif;
 }
 
+.site-navbar-links {
+  gap: 1.5rem;
+}
 
+.site-navbar-link {
+  border-radius: 6px;
+  transition: color 150ms ease, background-color 150ms ease;
+}
 
+.site-navbar-link {
+  padding: 0.35rem 0.5rem;
+}
+
+.site-navbar-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.site-navbar-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
 
   .bground {
     
@@ -38,3 +58,17 @@ body {
     margin-inline: auto;
 
   }
+
+@media (max-width: 600px) {
+  .site-navbar-title {
+    font-size: 0.9rem;
+  }
+
+  .site-navbar-links {
+    gap: 0.65rem;
+  }
+
+  .site-navbar-link {
+    font-size: 0.8rem;
+  }
+}

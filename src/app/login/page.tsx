@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navbar";
+import SignInLink from "../../components/SignInLink";
 
 export default function Home() {
   return (
@@ -6,8 +7,13 @@ export default function Home() {
       <Navbar />
       <div
         className="bground"
-        style={{ backgroundImage: "url('/Login.png')", alignItems: "center", justifyContent: "center", display: "flex" }}
-      ></div>
+        style={{
+          backgroundImage: "url('/Login.png')",
+          position: "relative",
+        }}
+      >
+        <SignInLink />
+      </div>
     </div>
   );
 }
