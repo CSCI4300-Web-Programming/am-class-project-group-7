@@ -1,10 +1,13 @@
-import Image from "next/image";
+import Navbar from "../../components/Navbar";
 
 export default function Home() {
   return (
-    <div className="bground" style={{backgroundImage: "url('/Login.png')", alignItems: "center", justifyContent: "center", display: "flex"}}>
-      
-
+    <div style={{ minHeight: "100vh" }}>
+      <Navbar />
+      <div
+        className="bground"
+        style={{ backgroundImage: "url('/Login.png')", alignItems: "center", justifyContent: "center", display: "flex" }}
+      ></div>
     </div>
   );
 }

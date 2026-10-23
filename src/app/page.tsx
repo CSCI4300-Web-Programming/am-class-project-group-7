@@ -1,12 +1,33 @@
-import Image from "next/image";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
-    <div className="bground" style={{backgroundImage: "url('/Desktop.png')", alignItems: "center", justifyContent: "center", display: "flex"}}>
-      <a href="/mainscreen" style={{margin: "49% 0 0 0", textAlign: "center", fontSize: "4cqw"}}> 
-      <b>GET STARTED</b>
-      </a> 
-
+    <div style={{ minHeight: "100vh" }}>
+      <Navbar />
+      <div
+        className="bground"
+        style={{
+          backgroundImage: "url('/Desktop.png')",
+          position: "relative",
+        }}
+      >
+        <a
+          href="/mainscreen"
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "78.5%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+            fontSize: "2vw",
+            display: "inline-block",
+            fontWeight: 700,
+            color: "#111111",
+          }}
+        >
+          <b>GET STARTED</b>
+        </a>
+      </div>
     </div>
   );
 }
