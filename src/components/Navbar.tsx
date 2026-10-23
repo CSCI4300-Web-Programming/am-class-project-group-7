@@ -9,21 +9,21 @@ export default function Navbar({ loggedIn = false }: NavbarProps) {
     <nav
       className="site-navbar"
       style={{
-        display: "flex",
+        display: "grid",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "initial",
         width: "100%",
-        padding: "0.9rem 1.5rem",
-        background: "rgba(192, 0, 0, 0.8)",
+        padding: "1.25rem 2rem",
+        background: "#ba0c2f",
         color: "#ffffff",
         boxSizing: "border-box",
-        borderRadius: "0 0 18px 18px",
+        borderRadius: "0 0 4rem 4rem",
       }}
     >
       <span
         className="site-navbar-title"
         style={{
-          fontWeight: 700,
+          fontWeight: 500,
           letterSpacing: "0.05em",
         }}
       >

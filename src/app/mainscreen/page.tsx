@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
         className="bground"
         style={{ backgroundImage: "url('/MainScreen.png')", alignItems: "center", justifyContent: "center", display: "flex" }}
       ></div>
+      <Footer />
     </div>
   );
 }

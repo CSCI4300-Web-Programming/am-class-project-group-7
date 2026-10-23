@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import SignInLink from "../../components/SignInLink";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       >
         <SignInLink />
       </div>
+      <Footer />
     </div>
   );
 }

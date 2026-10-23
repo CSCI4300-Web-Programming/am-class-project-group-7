@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       >
         <a
           href="/mainscreen"
+          className="get-started-link"
           style={{
             position: "absolute",
             left: "50%",
@@ -28,6 +30,7 @@ export default function Home() {
           <b>GET STARTED</b>
         </a>
       </div>
+      <Footer showMessage />
     </div>
   );
 }
