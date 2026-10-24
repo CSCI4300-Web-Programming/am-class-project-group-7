@@ -4,8 +4,9 @@ import ForumPost, { ForumPostData } from "../../components/ForumPost";
 import AddPostForm from "@/src/components/AddForumPosts";
 import bulldogImage from "../../../images/bulldog_glasses_red.jpg";
 import Link from "next/link";
+import ForumSection from "../../components/ForumSection";
 
-const isLoggedIn: boolean = true;
+const isLoggedIn: boolean = false;
 
 const intialPosts: ForumPostData[] = [
   {
@@ -35,22 +36,14 @@ const intialPosts: ForumPostData[] = [
 export default function Home() {
   return (
     <div style={{ minHeight: "100vh" }}>
-      <Navbar />
+      <Navbar loggedIn={isLoggedIn}/>
       <div
         className="bground"
         style={{ backgroundImage: "url('/MainScreen.png')", alignItems: "center", justifyContent: "center", display: "flex" }}
       ></div>
-      {intialPosts.map((post) => (
-        <ForumPost key={post.id} post={post} />
-      ))}
 
-      {isLoggedIn ? (
-        <AddPostForm />
-      ) : (
-        <p>
-          <Link href="/login">Log in</Link> to add a new post.
-        </p>
-      )}
+      <ForumSection canPost={isLoggedIn} />
+
       <Footer />
     </div>
   );
