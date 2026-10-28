@@ -1,8 +1,8 @@
 # Weekly Status Report
 
-**Project Name:**  
-**Group Name:**  
-**Project Manager:**  
+**Project Name:**  CSCI Class Forum
+**Group Name:**  Group 7
+**Project Manager:**  Noah Horne
 
 
 ---
