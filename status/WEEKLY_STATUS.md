@@ -33,15 +33,15 @@ Upload image to `/images/` and link it below:
 
 ** What we completed this week:**  
 - 
--  
+-  We completed the functional UI part of the project
 
 ** Issues / blockers encountered:**  
 -  
--  
+-  CSS is tedious, Maps are hard, Everything is difficult.
 
 ** Goals for next week:**  
 -  
--  
+-  Get done quicker.
 
 ---
 
