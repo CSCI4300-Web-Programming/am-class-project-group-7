@@ -1,7 +1,9 @@
+import connectMongoDB from "../../config/mongodb";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
+  connectMongoDB();
   return (
     <div style={{ minHeight: "100vh" }}>
       <Navbar />
