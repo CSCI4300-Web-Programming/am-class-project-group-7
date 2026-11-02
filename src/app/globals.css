@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #C8D8EB;
   --foreground: #171717;
 }
 
@@ -121,16 +121,11 @@ body {
   text-align: center;
 }
 
-  .bground {
-    
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: min(100vw, 118.5185vh);
-    aspect-ratio: 1280 / 1080;
-    margin-inline: auto;
-
-  }
+.bground {
+  width: min(100vw, 118.5185vh);
+  margin-inline: auto;
+  margin-block-start: 4.5rem;
+}
 
 @media (max-width: 600px) {
   .site-navbar-title {
