@@ -32,8 +32,9 @@ export default function Home() {
             marginInline: "auto",
             objectFit: "contain",
             borderRadius: "30px",
-            maskImage: "radial-gradient(ellipse, #000 68%, transparent 100%)",
-            WebkitMaskImage: "radial-gradient(ellipse, #000 68%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to right, transparent, black 10%, black 85%, transparent), linear-gradient(to bottom, transparent, black 10%, black 85%, transparent)",
+            maskComposite: "intersect",
           }}
         />
         <a
