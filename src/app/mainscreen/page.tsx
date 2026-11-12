@@ -8,30 +8,6 @@ import ForumSection from "../../components/ForumSection";
 
 const isLoggedIn: boolean = false;
 
-const intialPosts: ForumPostData[] = [
-  {
-    id: "welcome-post",
-    title: "Example Post",
-    description: "This is what a description will look like.",
-    imageSrc: bulldogImage,
-    imageAlt: "Bulldog",
-  },
-  {
-    id: "intro-post",
-    title: "Introduce yourself",
-    description: "Tell us a bit about yourself.",
-    imageSrc: bulldogImage,
-    imageAlt: "Bulldog",
-  },
-  {
-    id: "questions-post",
-    title: "Ask questions here.",
-    description: "All questions accepted",
-    imageSrc: bulldogImage,
-    imageAlt: "Bulldog",
-  },
-];
-
 
 export default function Home() {
   return (
@@ -41,6 +17,25 @@ export default function Home() {
         className="bground"
         style={{ backgroundImage: "url('/MainScreen.png')", alignItems: "center", justifyContent: "center", display: "flex" }}
       ></div>
+
+      {isLoggedIn && (
+        <Link
+          href="/AddPost"
+          className="get-started-link"
+          style={{
+            display: "block",
+            width: "fit-content",
+            margin: "1.5rem auto",
+            padding: "0.75rem 1.5rem",
+            borderRadius: "0.5rem",
+            backgroundColor: "#ba0c2f",
+            color: "#ffffff",
+            fontWeight: 700,
+          }}
+        >
+          Make a Post
+        </Link>
+      )}
 
       <ForumSection canPost={isLoggedIn} />
 

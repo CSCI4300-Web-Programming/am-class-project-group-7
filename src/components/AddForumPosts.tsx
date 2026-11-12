@@ -69,9 +69,9 @@ export default function AddPostForm({ onAddPost }: AddFormPostsProps) {
         name="description"
         value={newPost.description}
         onChange={handleChange}
-        placeholder="Post Description"
+        placeholder="Post Body"
         required
-        rows={4}
+        rows={10}
         style={{ ...fieldStyle, resize: "vertical", borderRadius: "1.5rem" }}
       />
       <button
@@ -84,7 +84,7 @@ export default function AddPostForm({ onAddPost }: AddFormPostsProps) {
           textAlign: "center",
         }}
       >
-        Add Post
+        Post
       </button>
     </form>
   );
