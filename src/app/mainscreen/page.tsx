@@ -8,7 +8,7 @@ import ForumSection from "../../components/ForumSection";
 
 const isLoggedIn: boolean = false;
 
-
+// Make sure to add the ability to load created posts from mongoDB and display them here
 export default function Home() {
   return (
     <div style={{ minHeight: "100vh" }}>
