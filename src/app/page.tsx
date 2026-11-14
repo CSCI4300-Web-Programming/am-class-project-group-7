@@ -22,6 +22,7 @@ export default function Home() {
           alt="Exterior of the science building"
           width={100}
           height={100}
+          unoptimized
           loading="eager"
           style={{
             display: "block",
@@ -49,7 +50,7 @@ export default function Home() {
             fontSize: "2vw",
             display: "inline-block",
             fontWeight: 700,
-            color: "#111111",
+            color: "#ffffff",
             backgroundColor: "#ba0c2f",
             padding: "0.5rem 1rem",
             borderRadius: "1rem",
