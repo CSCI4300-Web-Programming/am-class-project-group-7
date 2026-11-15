@@ -11,9 +11,10 @@ export type ForumPostData = {
 
 type ForumPostProps = {
   post: ForumPostData;
+  onDelete?: (id: string) => void;
 };
 
-export default function ForumPost({ post }: ForumPostProps) {
+export default function ForumPost({ post, onDelete }: ForumPostProps) {
   return (
     <article className="forum-post">
       <Image
@@ -26,6 +27,9 @@ export default function ForumPost({ post }: ForumPostProps) {
       <div className="forum-post-content">
         <h2 className="forum-post-title">{post.title}</h2>
         <p className="forum-post-description">{post.description}</p>
+        {onDelete && (
+          <button onClick={() => onDelete(post.id)}>Delete</button>
+        )}
       </div>
     </article>
   );
