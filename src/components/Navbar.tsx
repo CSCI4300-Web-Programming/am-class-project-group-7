@@ -37,6 +37,8 @@ export default function Navbar({ loggedIn = false }: NavbarProps) {
         <Link href="/mainscreen" className="site-navbar-link" style={{ color: "#ffffff", textDecoration: "none" }}>
           Main Screen
         </Link>
+        <Link href="/bookcover" className="site-navbar-link" style={{ color: "#ffffff", textDecoration: "none" }}>
+        </Link>
         <Link
           href={loggedIn ? "/mainscreen" : "/login"}
           className="site-navbar-link"
