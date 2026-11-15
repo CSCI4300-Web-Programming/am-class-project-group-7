@@ -1,4 +1,6 @@
+"use cache"; // DELETE IF CAUSES ISSUES
 import mongoose from "mongoose";
+
 
 const connectMongoDB = async (): Promise<void> => {
  try {
