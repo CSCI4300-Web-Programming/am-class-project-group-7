@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { doLogout } from "../app/actions";
+import { auth } from "@/auth";
 
-type NavbarProps = {
-  loggedIn?: boolean;
-};
+export default async function Navbar() {
+  const session = await auth();
+  const loggedIn = Boolean(session?.user);
 
-export default function Navbar({ loggedIn = false }: NavbarProps) {
   return (
     <nav
       className="site-navbar"
@@ -37,13 +38,33 @@ export default function Navbar({ loggedIn = false }: NavbarProps) {
         <Link href="/mainscreen" className="site-navbar-link" style={{ color: "#ffffff", textDecoration: "none" }}>
           Main Screen
         </Link>
-        <Link
-          href={loggedIn ? "/mainscreen" : "/login"}
-          className="site-navbar-link"
-          style={{ color: "#ffffff", textDecoration: "none" }}
-        >
-          {loggedIn ? "Logout" : "Login"}
-        </Link>
+        {loggedIn ? (
+          <form action={doLogout}>
+            <button
+              type="submit"
+              className="site-navbar-link"
+              style={{
+                color: "#ffffff",
+                textDecoration: "none",
+                background: "none",
+                border: "none",
+                padding: 0,
+                font: "inherit",
+                cursor: "pointer",
+              }}
+            >
+              Logout
+            </button>
+          </form>
+        ) : (
+          <Link
+            href="/login"
+            className="site-navbar-link"
+            style={{ color: "#ffffff", textDecoration: "none" }}
+          >
+            Login
+          </Link>
+        )}
       </div>
     </nav>
   );

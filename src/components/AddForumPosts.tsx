@@ -4,14 +4,14 @@ import { useState } from "react";
 
 type NewPost = {
     title: string;
-    description: string;
+    content: string;
 };
 
 type AddFormPostsProps = {
-    onAddPost: (title: string, description: string) => void;
+    onAddPost: (title: string, content: string) => void;
 }
 
-const emptyPost: NewPost = { title: "", description: "" };
+const emptyPost: NewPost = { title: "", content: "" };
 
 const fieldStyle: React.CSSProperties = {
   width: "100%",
@@ -38,7 +38,7 @@ export default function AddPostForm({ onAddPost }: AddFormPostsProps) {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("Submitted post:", newPost);
-        onAddPost(newPost.title, newPost.description);
+        onAddPost(newPost.title, newPost.content);
         setNewPost(emptyPost);
     };
     
@@ -66,8 +66,8 @@ export default function AddPostForm({ onAddPost }: AddFormPostsProps) {
       />
       <textarea
         className="forum-field"
-        name="description"
-        value={newPost.description}
+        name="content"
+        value={newPost.content}
         onChange={handleChange}
         placeholder="Post Body"
         required

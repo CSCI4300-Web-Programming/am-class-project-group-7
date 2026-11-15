@@ -12,7 +12,7 @@ const isLoggedIn: boolean = false;
 export default function Home() {
   return (
     <div style={{ minHeight: "100vh" }}>
-      <Navbar loggedIn={isLoggedIn}/>
+      <Navbar />
       <div
         className="bground"
         style={{ backgroundImage: "url('/MainScreen.png')", alignItems: "center", justifyContent: "center", display: "flex" }}

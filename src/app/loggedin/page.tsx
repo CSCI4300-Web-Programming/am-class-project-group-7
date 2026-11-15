@@ -5,7 +5,7 @@ import ForumSection from "@/src/components/ForumSection";
 export default function Home() {
   return (
     <div style={{ minHeight: "100vh" }}>
-      <Navbar loggedIn={true} />
+      <Navbar />
       <div
         className="bground"
         style={{ backgroundImage: "url('/LoggedIn.png')", alignItems: "center", justifyContent: "center", display: "flex" }}

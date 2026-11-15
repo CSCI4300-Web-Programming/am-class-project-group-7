@@ -1,15 +1,22 @@
 import { NextResponse } from "next/server";
+import { auth } from "@/auth";
 import { connectDB } from "../../lib/mongodb";
 import Post from "../../../../models/post";
 import mongoose from "mongoose";
 
 type Ctx = { params: Promise<{ id: string}> };
 
-function toClient(doc: any) {
+type PostRecord = {
+  _id: { toString: () => string };
+  title: string;
+  content: string;
+};
+
+function toClient(doc: PostRecord) {
   return {
     id: doc._id.toString(),
     title: doc.title,
-    description: doc.description,
+    content: doc.content,
   };
 }
 
@@ -29,22 +36,27 @@ export async function GET(_req: Request, { params }: Ctx) {
 }
 
 export async function PUT(req: Request, { params }: Ctx) {
+  const session = await auth();
+  if (!session?.user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const { id } = await params;
 
   if (!mongoose.isValidObjectId(id)) {
     return NextResponse.json({ error: "Invalid id" }, { status: 400 });
   }
 
-  const { title, description } = await req.json();
+  const { title, content } = await req.json();
 
-  if (!title || !description) {
+  if (!title || !content) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 
   await connectDB();
   const post = await Post.findByIdAndUpdate(
     id,
-    { title, description },
+    { title, content },
     { new: true, runValidators: true }
   );
 
@@ -56,6 +68,11 @@ export async function PUT(req: Request, { params }: Ctx) {
 
 
 export async function DELETE(_req: Request, { params }: Ctx) {
+  const session = await auth();
+  if (!session?.user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const { id } = await params;
 
   if (!mongoose.isValidObjectId(id)) {
