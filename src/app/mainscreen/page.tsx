@@ -8,37 +8,38 @@ import ForumSection from "../../components/ForumSection";
 
 const isLoggedIn: boolean = false;
 
-// Make sure to add the ability to load created posts from mongoDB and display them here
+
 export default function Home() {
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Navbar />
-      <div
-        className="bground"
-        style={{ backgroundImage: "url('/MainScreen.png')", alignItems: "center", justifyContent: "center", display: "flex" }}
-      ></div>
+      <main style={{ flex: 1 }}>
+        <div
+          className="bground"
+          style={{ backgroundImage: "url('/MainScreen.png')", alignItems: "center", justifyContent: "center", display: "flex" }}
+        ></div>
 
-      {isLoggedIn && (
-        <Link
-          href="/AddPost"
-          className="get-started-link"
-          style={{
-            display: "block",
-            width: "fit-content",
-            margin: "1.5rem auto",
-            padding: "0.75rem 1.5rem",
-            borderRadius: "0.5rem",
-            backgroundColor: "#ba0c2f",
-            color: "#ffffff",
-            fontWeight: 700,
-          }}
-        >
-          Make a Post
-        </Link>
-      )}
+        {isLoggedIn && (
+          <Link
+            href="/AddPost"
+            className="get-started-link"
+            style={{
+              display: "block",
+              width: "fit-content",
+              margin: "1.5rem auto",
+              padding: "0.75rem 1.5rem",
+              borderRadius: "0.5rem",
+              backgroundColor: "#ba0c2f",
+              color: "#ffffff",
+              fontWeight: 700,
+            }}
+          >
+            Make a Post
+          </Link>
+        )}
 
-      <ForumSection canPost={isLoggedIn} />
-
+        <ForumSection canPost={isLoggedIn} />
+      </main>
       <Footer />
     </div>
   );

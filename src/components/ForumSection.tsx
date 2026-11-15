@@ -5,30 +5,6 @@ import ForumPost, { ForumPostData } from "./ForumPost";
 import AddPostForm from "./AddForumPosts";
 import bulldogImage from "../../images/bulldog_glasses_red.jpg";
 
-const initialPosts: ForumPostData[] = [
-  {
-    id: "welcome-post",
-    title: "Example Post",
-    content: "This is what a description will look like",
-    imageSrc: bulldogImage,
-    imageAlt: "Bulldog",
-  },
-  {
-    id: "intro-post",
-    title: "Introduce yourself",
-    content: "Tell us a bit about who you are.",
-    imageSrc: bulldogImage,
-    imageAlt: "Bulldog",
-  },
-  {
-    id: "questions-post",
-    title: "Ask your questions here",
-    content: "No question is too small.",
-    imageSrc: bulldogImage,
-    imageAlt: "Bulldog",
-  },
-];
-
 type ForumSectionProps = {
     canPost: boolean;
 };
@@ -69,9 +45,6 @@ export default function ForumSection({ canPost }: ForumSectionProps) {
 
     return (
       <>
-        {initialPosts.map((post) => (
-          <ForumPost key={post.id} post={post} />
-        ))}
         {dbPosts.map((post) => (
           <ForumPost
             key={post.id}
