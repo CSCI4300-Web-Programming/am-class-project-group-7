@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ForumPost, { ForumPostData } from "../../components/ForumPost";
@@ -6,10 +7,10 @@ import bulldogImage from "../../../images/bulldog_glasses_red.jpg";
 import Link from "next/link";
 import ForumSection from "../../components/ForumSection";
 
-const isLoggedIn: boolean = false;
+export default async function Home() {
+  const session = await auth();
+  const isLoggedIn = Boolean(session?.user);
 
-
-export default function Home() {
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Navbar />
@@ -18,7 +19,7 @@ export default function Home() {
           className="bground"
           style={{ backgroundImage: "url('/MainScreen.png')", alignItems: "center", justifyContent: "center", display: "flex" }}
         ></div>
-
+{/*
         {isLoggedIn && (
           <Link
             href="/AddPost"
@@ -36,8 +37,9 @@ export default function Home() {
           >
             Make a Post
           </Link>
+         
         )}
-
+ */}
         <ForumSection canPost={isLoggedIn} />
       </main>
       <Footer />

@@ -22,7 +22,7 @@ export default function LoginForm() {
         return;
       }
 
-      router.push("/loggedin");
+      router.push("/mainscreen");
       router.refresh();
     } catch {
       setError("Sign in failed. Please try again.");
