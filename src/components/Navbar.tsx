@@ -38,13 +38,35 @@ export default async function Navbar() {
         <Link href="/mainscreen" className="site-navbar-link" style={{ color: "#ffffff", textDecoration: "none" }}>
           Main Screen
         </Link>
-        <Link
-          href={loggedIn ? "/mainscreen" : "/login"}
-          className="site-navbar-link"
-          style={{ color: "#ffffff", textDecoration: "none" }}
-        >
-          {loggedIn ? "Logout" : "Login"}
+        <Link href="/bookcover" className="site-navbar-link" style={{ color: "#ffffff", textDecoration: "none" }}>
+          Book Cover
         </Link>
+        {loggedIn ? (
+          <form action={doLogout}>
+            <button
+              type="submit"
+              className="site-navbar-link"
+              style={{
+                color: "#ffffff",
+                textDecoration: "none",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                font: "inherit",
+              }}
+            >
+              Logout
+            </button>
+          </form>
+        ) : (
+          <Link
+            href="/login"
+            className="site-navbar-link"
+            style={{ color: "#ffffff", textDecoration: "none" }}
+          >
+            Login
+          </Link>
+        )}
       </div>
     </nav>
   );
