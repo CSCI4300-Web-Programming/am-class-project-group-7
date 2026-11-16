@@ -101,8 +101,8 @@ export default function BookCoverPage() {
           key={isbn}
           src={coverUrl}
           alt={`Book cover for ISBN ${isbn}`}
-          width={300}
-          height={450}
+          width={900}
+          height={1350}
           unoptimized
           style={{ width: "100%", height: "auto" }}
           onLoad={() => setStatus("found")}
