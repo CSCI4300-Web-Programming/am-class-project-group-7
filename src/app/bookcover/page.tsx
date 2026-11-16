@@ -72,7 +72,7 @@ export default function BookCoverPage() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Enter ISBN (e.g. 9780140328721)"
+          placeholder="Enter ISBN e.g. 9780321776419"
           required
           style={fieldStyle}
         />
