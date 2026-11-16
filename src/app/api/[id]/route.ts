@@ -24,13 +24,14 @@ export async function GET(_req: Request, { params }: Ctx) {
   const { id } = await params;
 
   if (!mongoose.isValidObjectId(id)) {
-    return NextResponse.json({ error: "Invalid id" }, { status: 400 });
+    return NextResponse.json({ error: "Invalid id" }, { status: 400 }); // error
   }
 
   await connectDB();
   const post = await Post.findById(id);
+  
   if (!post) {
-    return NextResponse.json({ error: "Not found" }, { status: 404 });
+    return NextResponse.json({ error: "Not found" }, { status: 404 }); // error
   }
   return NextResponse.json(toClient(post));
 }
@@ -38,19 +39,19 @@ export async function GET(_req: Request, { params }: Ctx) {
 export async function PUT(req: Request, { params }: Ctx) {
   const session = await auth();
   if (!session?.user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 }); // error
   }
 
   const { id } = await params;
 
   if (!mongoose.isValidObjectId(id)) {
-    return NextResponse.json({ error: "Invalid id" }, { status: 400 });
+    return NextResponse.json({ error: "Invalid id" }, { status: 400 }); // error
   }
 
   const { title, content } = await req.json();
 
   if (!title || !content) {
-    return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+    return NextResponse.json({ error: "Missing fields" }, { status: 400 }); // error
   }
 
   await connectDB();
@@ -61,7 +62,7 @@ export async function PUT(req: Request, { params }: Ctx) {
   );
 
   if (!post) {
-    return NextResponse.json({ error: "Not found" }, { status: 404 });
+    return NextResponse.json({ error: "Not found" }, { status: 404 }); // error
   }
   return NextResponse.json(toClient(post));
 }
@@ -70,20 +71,20 @@ export async function PUT(req: Request, { params }: Ctx) {
 export async function DELETE(_req: Request, { params }: Ctx) {
   const session = await auth();
   if (!session?.user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 }); // error
   }
 
   const { id } = await params;
 
   if (!mongoose.isValidObjectId(id)) {
-    return NextResponse.json({ error: "Invalid id" }, { status: 400 });
+    return NextResponse.json({ error: "Invalid id" }, { status: 400 }); // error
   }
 
   await connectDB();
   const post = await Post.findByIdAndDelete(id);
 
   if (!post) {
-    return NextResponse.json({ error: "Not found" }, { status: 404 });
+    return NextResponse.json({ error: "Not found" }, { status: 404 }); // error
   }
   return NextResponse.json({ message: "Deleted" });
 }

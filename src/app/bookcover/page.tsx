@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-// Strips hyphens/spaces and returns a valid-looking ISBN-10/13, or "" if invalid
+// Meant to take out any spaces or hyphens in the input
 function cleanIsbn(input: string): string {
   const value = input.replace(/[-\s]/g, "").toUpperCase();
   return /^(\d{13}|\d{9}[\dX])$/.test(value) ? value : "";
@@ -42,7 +42,7 @@ export default function BookCoverPage() {
     }
 
     setError("");
-    if (cleaned === isbn) return; // same book, nothing to reload
+    if (cleaned === isbn) return; // checking for the same book
     setStatus("loading");
     setIsbn(cleaned);
   };
@@ -93,7 +93,7 @@ export default function BookCoverPage() {
       {error && <p role="alert">{error}</p>}
       {status === "loading" && <p>Loading cover…</p>}
       {status === "missing" && (
-        <p>No cover found for ISBN {isbn}. Double-check the number or try another edition.</p>
+        <p>No cover found for ISBN {isbn}. Double-check the number or try another ISBN</p>
       )}
 
       {coverUrl && status !== "missing" && (

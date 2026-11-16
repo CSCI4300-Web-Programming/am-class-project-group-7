@@ -26,16 +26,16 @@ export async function GET() {
 export async function POST(req: Request) {
     const session = await auth();
     if (!session?.user) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 }); // error
     }
 
     await connectDB();
-    const { title, content } = await req.json();
+    const { title, content } = await req.json(); // Uses the two constraints from Post
 
     if (!title || !content) {
-        return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+        return NextResponse.json({ error: "Missing fields" }, { status: 400 }); // error
     }
 
-    const post = await Post.create({ title, content });
+    const post = await Post.create({ title, content }); // Using the Post from models
     return NextResponse.json(toClient(post), { status: 201 });
 }
