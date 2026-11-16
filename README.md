@@ -50,7 +50,7 @@ Our team collaboratively designed, developed, and deployed this full-stack web a
 | Frontend          | React + Next.js (App Router)                 |
 | Backend           | Next.js API Routes / Node.js                 |
 | Database          | MongoDB + Mongoose                           |
-| Styling           | Tailwind CSS ?? / Custom CSS Modules ??      |
+| Styling           | Tailwind CSS + Custom CSS Modules            |
 | Authentication    | NextAuth.js                                  |
 
 ---
@@ -64,38 +64,41 @@ npm run dev
 The project should now be running at:
     http://localhost:3000
 
-## API Endpoints (Examples – update as you build)
+## API Endpoints 
 
 | Method      | Endpoint             | Description            |
 | ----------- | -------------------- | ---------------------- |
-| GET         | /api/items           | Fetch all items        |
-| POST        | /api/items           | Create a new item      |
-| GET         | /api/items/[id]      | Get item by ID         |
-| PUT         | /api/items/[id]      | Update item by ID      |
-| DELETE      | /api/items/[id]      | Delete item by ID 
-| ...         | ...                  | ... 
-| ...         | ...                  | ...                    |
+| GET         | /api/posts           | Fetch all posts        |
+| POST        | /api/posts           | Create a new item      |
+| GET         | /api/posts/[id]      | Get item by ID         |
+| PUT         | /api/posts/[id]      | Update item by ID      |
+| DELETE      | /api/posts/[id]      | Delete item by ID      |
 
-## Database Models (example)
-User
+
+## Database Models 
+Post
 | Field    | Type   | Description     |
 | -------- | ------ | --------------- |
-| name     | String | Full name       |
-| email    | String | Unique email    |
-| role     | String | admin/user/etc. |
-| password | String | Hashed password |
+| title    | String | post title      |
+| user     | String | poster username |
+| text     | String | the post body   |
+| rating   | String | rating out of 5 |
+| link     | String | Included link   |
 
 ## Client Routes (example)
 | Route         | Description       |
 | ------------- | ----------------- |
 | `/`           | Homepage          |
 | `/login`      | User login        |
-| `/dashboard`  | User dashboard    |
-| `/items`      | List of items     |
-| `/items/[id]` | View details page |
+| `/loggedin`   | User dashboard    |
+| `/register`   | User creation     |
+| `/bookcover`  | Cover lookup by ID|
+| `/mainscreen` | Logged out dashboard |
+
 
 ## Future Improvements
-- what would you like to do next?
+- Check for textbook ID *in* post, change default picture to the uncovered textbook cover.
+- Include x/y stars based on user rating.
 
 ## Acknowledgements
 - kudos to ....
