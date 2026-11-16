@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/auth";
-import { connectDB } from "../../lib/mongodb";
-import Post from "../../../../models/post";
+import { connectDB } from "../../../lib/mongodb";
+import Post from "../../../../../models/post";
 import mongoose from "mongoose";
 
 type Ctx = { params: Promise<{ id: string}> };

@@ -1,11 +1,43 @@
+import { Suspense } from "react";
 import Link from "next/link";
+import { connection } from "next/server";
 import { doLogout } from "../app/actions";
 import { auth } from "@/auth";
 
-export default async function Navbar() {
+const linkStyle = { color: "#ffffff", textDecoration: "none" };
+
+// Reads the session, so it must run at request time (not during prerendering).
+async function AuthLink() {
+  // Wait for a real request before calling auth(); NextAuth uses
+  // crypto.getRandomValues() internally, which can't run while prerendering.
+  await connection();
   const session = await auth();
   const loggedIn = Boolean(session?.user);
 
+  return loggedIn ? (
+    <form action={doLogout}>
+      <button
+        type="submit"
+        className="site-navbar-link"
+        style={{
+          ...linkStyle,
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          font: "inherit",
+        }}
+      >
+        Logout
+      </button>
+    </form>
+  ) : (
+    <Link href="/login" className="site-navbar-link" style={linkStyle}>
+      Login
+    </Link>
+  );
+}
+
+export default function Navbar() {
   return (
     <nav
       className="site-navbar"
@@ -41,32 +73,10 @@ export default async function Navbar() {
         <Link href="/bookcover" className="site-navbar-link" style={{ color: "#ffffff", textDecoration: "none" }}>
           Book Cover
         </Link>
-        {loggedIn ? (
-          <form action={doLogout}>
-            <button
-              type="submit"
-              className="site-navbar-link"
-              style={{
-                color: "#ffffff",
-                textDecoration: "none",
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-                font: "inherit",
-              }}
-            >
-              Logout
-            </button>
-          </form>
-        ) : (
-          <Link
-            href="/login"
-            className="site-navbar-link"
-            style={{ color: "#ffffff", textDecoration: "none" }}
-          >
-            Login
-          </Link>
-        )}
+        {/* The rest of the navbar prerenders; only the auth link waits for the request. */}
+        <Suspense fallback={null}>
+          <AuthLink />
+        </Suspense>
       </div>
     </nav>
   );

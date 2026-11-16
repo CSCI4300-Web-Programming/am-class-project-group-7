@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import { connection } from "next/server";
 import { auth } from "@/auth";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -7,10 +9,16 @@ import bulldogImage from "../../../images/bulldog_glasses_red.jpg";
 import Link from "next/link";
 import ForumSection from "../../components/ForumSection";
 
-export default async function Home() {
+// Reads the session, so it must run at request time (inside <Suspense>).
+async function ForumForUser() {
+  await connection();
   const session = await auth();
   const isLoggedIn = Boolean(session?.user);
 
+  return <ForumSection canPost={isLoggedIn} />;
+}
+
+export default function Home() {
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Navbar />
@@ -40,7 +48,9 @@ export default async function Home() {
          
         )}
  */}
-        <ForumSection canPost={isLoggedIn} />
+        <Suspense fallback={null}>
+          <ForumForUser />
+        </Suspense>
       </main>
       <Footer />
     </div>

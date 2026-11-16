@@ -17,7 +17,7 @@ export default function ForumSection({ canPost }: ForumSectionProps) {
     const [dbPosts, setDbPosts] = useState<ForumPostData[]>([]);
 
     useEffect(() => {
-      fetch("api/posts")
+      fetch("/api/posts")
         .then((res) => res.json())
         .then((data: ForumPostData[]) => setDbPosts(data.map(withImage)))
         .catch((err) => console.error("Failed to load posts:", err));
