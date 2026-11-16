@@ -4,7 +4,7 @@ import type { StaticImageData } from "next/image";
 export type ForumPostData = {
   id: string;
   title: string;
-  description: string;
+  content: string;
   imageSrc: string | StaticImageData;
   imageAlt: string;
 };
@@ -26,7 +26,7 @@ export default function ForumPost({ post, onDelete }: ForumPostProps) {
       />
       <div className="forum-post-content">
         <h2 className="forum-post-title">{post.title}</h2>
-        <p className="forum-post-description">{post.description}</p>
+        <p className="forum-post-description">{post.content}</p>
         {onDelete && (
           <button onClick={() => onDelete(post.id)}>Delete</button>
         )}

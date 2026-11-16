@@ -3,14 +3,16 @@ import mongoose, { Schema, Model } from "mongoose";
 export type UserType = {
   username: string;
   password: string;
+  email: string;
 };
 
 export type UserDoc = mongoose.HydratedDocument<UserType>;
 
 const userSchema = new Schema<UserType>(
   {
-    username: { type: String, required: true, unique: true },
+    username: { type: String, required: true, unique: true, trim: true },
     password: { type: String, required: true },
+    email: { type: String, required: true, unique: true, trim: true },
   },
   { timestamps: true }
 );
