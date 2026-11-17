@@ -21,9 +21,9 @@ Our team collaboratively designed, developed, and deployed this full-stack web a
 ## Project Features 
 
 - Open Library API integration.
-- Authentication & Authorization** (login/sign-up, protected routes)  
-- Middleware or Route Protection** for authenticated users   
-- Responsive UI** & dynamic navigation bar  
+- Authentication & Authorization (login/sign-up, protected routes)  
+- Route Protection for authenticated users   
+- Responsive UI 
 
 ---
 
@@ -35,6 +35,7 @@ Our team collaboratively designed, developed, and deployed this full-stack web a
 │       └── app - App Router pages & API routes
 │            └──   components → list components
 │            └──   models → Mongoose schemas / MongoDB models
+│            └──   api → Routes for MongoDB & Auth connection
 │── design - mockups.md 
 │── images - mockup images, etc.
 └── status - WEEKLY_STATUS.md
@@ -101,4 +102,7 @@ Post
 - Include x/y stars based on user rating.
 
 ## Acknowledgements
-- kudos to ....
+- Many thanks to the teams responsible for the amazing tools we get to use for this project.
+    Developers for Open Books, Next, Node JS, and VS Code made the creation of this project possible.
+- Thanks to Dr. Stephens, our TAs and PLAs, and anyone who helped in developing WebDawgs.
+- We want to thank one another; we're pleased that this project allowed us all to make new friends.
