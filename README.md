@@ -18,11 +18,11 @@ Our team collaboratively designed, developed, and deployed this full-stack web a
 
 ---
 
-## Project Features (Example)
+## Project Features 
 
+- Open Library API integration.
 - Authentication & Authorization** (login/sign-up, protected routes)  
-- Middleware or Route Protection** for authenticated users  
-- CRUD operations** using a database or API  
+- Middleware or Route Protection** for authenticated users   
 - Responsive UI** & dynamic navigation bar  
 
 ---
