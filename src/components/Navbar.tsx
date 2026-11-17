@@ -13,6 +13,7 @@ async function AuthLink() {
   await connection();
   const session = await auth();
   const loggedIn = Boolean(session?.user);
+  const userName = session?.user?.name ?? "User";
 
   return loggedIn ? (
     <form action={doLogout}>
@@ -35,6 +36,15 @@ async function AuthLink() {
       Login
     </Link>
   );
+}
+
+// Reads the session, so it must run at request time (not during prerendering).
+async function WelcomeText() {
+  await connection();
+  const session = await auth();
+  const userName = session?.user?.name;
+
+  return <>{userName ? `Welcome, ${userName}` : "CSCI Student Forum"}</>;
 }
 
 export default function Navbar() {
@@ -60,7 +70,9 @@ export default function Navbar() {
           letterSpacing: "0.05em",
         }}
       >
-        CSCI Student Forum
+        <Suspense fallback={"CSCI Student Forum"}>
+          <WelcomeText />
+        </Suspense>
       </span>
 
       <div className="site-navbar-links" style={{ display: "flex", alignItems: "center" }}>

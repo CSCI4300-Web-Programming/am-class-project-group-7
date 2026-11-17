@@ -63,7 +63,39 @@ body {
 
 .forum-post-content {
   padding: 1rem;
+  color: #555555;
 }
+
+.forum-post-content button {
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.forum-post-content button:hover {
+  background-color: #bbbbbb;
+}
+
+.forum-post-content a {
+  padding: 0.33rem 0.5rem;
+  margin-top: 0.5rem;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.forum-post-content a:hover {
+  background-color: #bbbbbb;
+}
+
+.forum-post-buttons {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+
+
 
 .forum-post-title {
   margin: 0 0 0.5rem;

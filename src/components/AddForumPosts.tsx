@@ -9,6 +9,10 @@ type NewPost = {
 
 type AddFormPostsProps = {
     onAddPost: (title: string, content: string) => void;
+    // Optional: pre-fill the form (e.g. when editing an existing post).
+    initialPost?: NewPost;
+    // Optional: text for the submit button. Defaults to "Post".
+    submitLabel?: string;
 }
 
 const emptyPost: NewPost = { title: "", content: "" };
@@ -26,8 +30,12 @@ const fieldStyle: React.CSSProperties = {
   outline: "none",
 };
 
-export default function AddPostForm({ onAddPost }: AddFormPostsProps) {
-    const [newPost, setNewPost] = useState<NewPost>(emptyPost);
+export default function AddPostForm({
+    onAddPost,
+    initialPost,
+    submitLabel = "Post",
+}: AddFormPostsProps) {
+    const [newPost, setNewPost] = useState<NewPost>(initialPost ?? emptyPost);
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -39,7 +47,8 @@ export default function AddPostForm({ onAddPost }: AddFormPostsProps) {
         e.preventDefault();
         console.log("Submitted post:", newPost);
         onAddPost(newPost.title, newPost.content);
-        setNewPost(emptyPost);
+        // Only clear the form when creating; when editing, keep the values shown.
+        if (!initialPost) setNewPost(emptyPost);
     };
     
 
@@ -84,7 +93,7 @@ export default function AddPostForm({ onAddPost }: AddFormPostsProps) {
           textAlign: "center",
         }}
       >
-        Post
+        {submitLabel}
       </button>
     </form>
   );

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { StaticImageData } from "next/image";
 
 export type ForumPostData = {
@@ -28,7 +29,11 @@ export default function ForumPost({ post, onDelete }: ForumPostProps) {
         <h2 className="forum-post-title">{post.title}</h2>
         <p className="forum-post-description">{post.content}</p>
         {onDelete && (
-          <button onClick={() => onDelete(post.id)}>Delete</button>
+          <div className="forum-post-buttons">
+            <button onClick={() => onDelete(post.id)}>Delete</button>
+            <Link href={`/edit/${post.id}`}>Edit</Link>{" "}
+            
+          </div>
         )}
       </div>
     </article>
